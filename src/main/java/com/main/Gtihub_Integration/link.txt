@@ -1,0 +1,28 @@
+https://tryapis.com/github/api/repos-list-for-org
+
+above link having every possible api related to git Api
+
+____________________________________________________________________curl for Github___________________________________________________________________________________________
+
+____________________________________________________________________Rename Branch___________________________________________________________________________________________
+
+curl -L \
+  -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <YOUR-TOKEN>"\
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/OWNER/REPO/branches/BRANCH/rename \
+  -d '{"new_name":"my_renamed_branch"}'
+
+____________________________________________________________________Create a Branch___________________________________________________________________________________________
+
+
+  curl -X POST \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "ref": "refs/heads/new_branch",
+      "sha": "14 digit number"
+    }' \
+    https://api.github.com/repos/your_organization/your_repository/git/refs
+
